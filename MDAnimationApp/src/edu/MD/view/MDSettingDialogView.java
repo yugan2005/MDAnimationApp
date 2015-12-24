@@ -105,8 +105,14 @@ public class MDSettingDialogView {
 		minTemperature = mainApp.getMinTemperature();
 		StringBuilder errorMessage = new StringBuilder();
 
-		if (filmSizeInput <= 1)
-			errorMessage.append("filmSize must be greater than 1. \n");
+		if (initialTemperatureInput < 90) {
+			if (filmSizeInput <= 3)
+					errorMessage.append("filmSize must be greater than 3. \n");
+		}
+		else {
+			if (filmSizeInput <= 2)
+				errorMessage.append("filmSize must be greater than 2. \n");
+		}
 		if (filmSizeInput > 6)
 			errorMessage.append("filmSize too large for the live animation application. \n");
 		if (filmThicknessInput <= 1)
